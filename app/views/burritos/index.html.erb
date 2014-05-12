@@ -1,0 +1,17 @@
+<h1>All My Burritos!</h1>
+<p>I've got <%= @burritos.count %> burritos ready to go!</p>
+
+<% @burritos.each do |b| %>
+  <ul>
+    <li>
+      <%= link_to burrito_path b do %>
+        <strong><%= b.name %>'s burrito.  Don't touch!!!</strong>
+      <% end %>
+      <ul>
+        <% b.ingredients.each do |i| %>
+          <li><%= i.name %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+<% end %>

@@ -1,0 +1,11 @@
+<h1><%= @burrito.name %></h1>
+
+<p>Here are the <%= @burrito.ingredients.count %> ingredients that make up this awesome burrito:</p>
+
+<ol>
+<% @burrito.ingredients.each do |i| %>
+  <li><%= i.name %></li>
+<% end %>
+</ol>
+
+<%= link_to "Edit your burrito", edit_burrito_path(@burrito) %>
