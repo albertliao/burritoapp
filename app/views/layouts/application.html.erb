@@ -27,7 +27,7 @@
         <li><%= link_to "New Burrito", new_burrito_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if session[:remember_token] %>
+        <% if cookies.permanent[:remember_token] %>
         <li><%= "Welcome " + current_user.name %></li>
           <li><%= link_to "Log Out", sessions_path, method: :delete %></li>
         <% else %>

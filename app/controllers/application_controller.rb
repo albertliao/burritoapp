@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
   def current_user
     # raise session[:remember_token]
     # memoization ||=
-    if session[:remember_token]
-  		@current_user ||=  User.find(session[:remember_token])
+    if cookies.permanent[:remember_token]
+  		@current_user ||=  User.find(cookies.permanent[:remember_token])
   	else
    		@current_user = nil
   	end
