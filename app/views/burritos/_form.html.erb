@@ -1,6 +1,6 @@
 <%= form_for @burrito do |f| %>
   Name: <%= f.text_field :name %><br />
-
+  <%= f.file_field :picture %>
   <%= collection_check_boxes :burrito, :ingredient_ids, @ingredients, :_id, :name %>
 
   <%# @ingredients.each do |i| %>

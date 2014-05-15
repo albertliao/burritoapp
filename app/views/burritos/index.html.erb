@@ -6,6 +6,7 @@
     <li>
       <%= link_to burrito_path b do %>
         <strong><%= b.name %>'s burrito.  Don't touch!!!</strong>
+        <br /><%= image_tag b.picture.url, size: "400x300" %><br />
       <% end %>
       <ul>
         <% b.ingredients.each do |i| %>

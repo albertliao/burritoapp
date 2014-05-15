@@ -16,7 +16,7 @@ before_action :authenticate_user
   end
 
   def create
-    Burrito.create(params.require(:burrito).permit(:name, :ingredient_ids => []))
+    Burrito.create(params.require(:burrito).permit(:name,:picture, :ingredient_ids => []))
     redirect_to burritos_path
   end
 
@@ -27,7 +27,7 @@ before_action :authenticate_user
 
   def update
     @burrito = Burrito.find(params[:id])
-    if @burrito.update(params.require(:burrito).permit(:name, :ingredient_ids => []))
+    if @burrito.update(params.require(:burrito).permit(:name,:picture, :ingredient_ids => []))
       redirect_to burritos_path
     else
       render 'edit'

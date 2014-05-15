@@ -1,8 +1,14 @@
 class Burrito
   include Mongoid::Document
+  include Mongoid::Paperclip
   field :name, type: String
 
   has_many :burrito_ingredients
+
+  has_mongoid_attached_file :picture 
+
+  validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
 
   # Fakes out a has_many :through
 
